@@ -1,0 +1,81 @@
+{
+  "name": "promptflow",
+  "displayName": "PromptFlow",
+  "description": "local prompt notebook",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "promptFlow.newTurn",
+        "title": "Prompt Flow: New Turn"
+      },
+      {
+        "command": "promptFlow.copyCurrent",
+        "title": "Prompt Flow: Copy Current Turn"
+      },
+      {
+        "command": "promptFlow.copyHistory",
+        "title": "Prompt Flow: Copy Full History"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "promptFlow.newTurn",
+        "key": "ctrl+alt+n",
+        "when": "editorTextFocus && editorLangId == markdown"
+      },
+      {
+        "command": "promptFlow.copyCurrent",
+        "key": "ctrl+alt+c",
+        "when": "editorTextFocus && editorLangId == markdown"
+      }
+    ]
+  },
+  "configuration": {
+    "title": "Prompt Flow",
+    "properties": {
+      "promptFlow.separator": {
+        "type": "string",
+        "default": "\n\n---\n\n",
+        "description": "The separator used between prompt turns."
+      },
+      "promptFlow.includeSystemPrompt": {
+        "type": "boolean",
+        "default": true,
+        "description": "Whether to include the System Prompt (first block) when copying the current turn."
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.84.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "typescript-eslint": "^8.46.3",
+    "eslint": "^9.39.1",
+    "typescript": "^5.9.3",
+    "ts-loader": "^9.5.4",
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}

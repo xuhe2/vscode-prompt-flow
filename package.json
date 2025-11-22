@@ -3,6 +3,10 @@
   "displayName": "PromptFlow",
   "description": "local prompt notebook",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xuhe2/vscode-prompt-flow"
+  },
   "engines": {
     "vscode": "^1.84.0"
   },

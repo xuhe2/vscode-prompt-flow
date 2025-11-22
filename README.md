@@ -26,9 +26,12 @@
 3. 开始编写你的提示词
 4. 使用快捷键快速复制内容到网页AI
 
-## 📄 许可证
+## 🔗 项目地址
 
-[MIT 许可证](LICENSE)
+- GitHub仓库：[https://github.com/xuhe2/vscode-prompt-flow](https://github.com/xuhe2/vscode-prompt-flow)
+
+
+## 📄 许可证
 
 ## 📧 联系方式
 
